@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900|Nanum+Gothic|Sedgwick+Ave');
+
+/* 공통 클래스 정의 */
+
+body {
+	/*background: url(../bg.jpg) no-repeat center top;*/
+	font-family: 'Nanum Gothic', '맑은 고딕', '돋움', 'Dotum', 'Maven Pro', sans-serif, 'Sedgwick Ave', cursive;
+	overflow-x:hidden;
+}
+*{ padding:0; margin:0; }
+ul, li{ list-style:none; }
+img{ display:block; border:0; }
+a{ text-decoration:none; }
+
+.cf{ content:''; display: block; clear:both; }
+.fl{ float:left; }
+.hide{display:none !important;}
+
+/* 로고 컬러 */
+.logo_w{width:117px; height:60px; background:url(../images/img/logo_w.png) no-repeat center center; background-size:cover;}
+.logo_g{width:117px; height:60px; background:url(../images/img/logo_g.png) no-repeat center center; background-size:cover; display:block; text-indent:-99999px; position:absolute; top:70px; left:50%; transform:translateX(-50%); /*margin:0 auto;*/ }
+.logo_g a{ display: block; width:100%; height:100%; text-indent:-99999px; }
+.logo_g-portfolio{ width:117px; height:60px; background:url(../images/img/logo_g.png) no-repeat center center; background-size:cover; display:block; text-indent:-99999px; position:absolute; top:0px; left:50%; transform:translateX(-50%);  }
+
+/* 버튼위치, 컬러 */
+#toggle_btn{ width:40px; height:30px; position:absolute; top:0; left:80px; cursor:pointer; z-index:200; }
+#toggle_btn span{ position:absolute; display:block; height:2px; }
+#toggle_btn span.btn_g { background-color:#007445; }
+#toggle_btn span:nth-of-type(1){ width:85%; top:0; left:0; }
+#toggle_btn span:nth-of-type(2){ width:70%; top:50%; left:0; }
+#toggle_btn span:nth-of-type(3){ width:100%; bottom:0; left:0; }
+.btn_g span{background-color:#007445;}
+.btn_w span{background-color:#ffffff;}
+.btn_b span{background-color:#222222;}
+
+/* 버튼 애니메이션 */
+#toggle_btn:hover span{ width:100%; }
+#toggle_btn.active span:nth-of-type(1){
+	width:100%; top:15px; transform:rotate(45deg);
+}
+#toggle_btn.active span:nth-of-type(2){ opacity:0; }
+#toggle_btn.active span:nth-of-type(3){ width:100%; top:15px; transform:rotate(-45deg);}
+#toggle_btn span{ transition:transform, opacity, top, left, width; transition-duration:.5s; transition-delay:.1s; }
+
+/* 어바웃 헤더 */
+#header{ width:100%; height:60px; margin-top: 80px; position:absolute; z-index: 100; }
+.logo_w{ margin: 0 auto; }
+.logo_w a{ display: block; width:100%; height:100%; text-indent:-99999px;}
+.title_w{ color:#ffffff; }
+.title_b{ color:#222222; }
+.index_wrap{ width:100vw; height:100vh; position: relative; }
+/* 어바웃어스 타이틀 */
+.title{ position: absolute; right:184px; top:75px; font-family:'Maven Pro', sans-serif; font-weight:900; font-size:2em; z-index: 200; letter-spacing:1px; }
+/* 어바웃어스 메인이미지 */
+.aboutImg{background: url(../images/img/ABOUT_main.png) no-repeat center top; background-size:cover; }
+/* 어바웃어스 메인 픽스드 텍스트 */
+.fx_text{ width:100%; height:100%; position:absolute; }
+.fx_text span{ display: block; font-family:'Maven Pro', sans-serif; font-size:1.1em; color:#ffffff; position:absolute; letter-spacing: 1.5px; }
+.fx_text span:nth-of-type(1){ left:80px; top:50%; writing-mode: vertical-lr; transform: rotate(180deg); }
+.fx_text span:nth-of-type(2){bottom:80px; left:50%; transform:translateX(-50%); }
+.fx_text span:nth-of-type(3){ right:80px; top:50%; writing-mode: vertical-lr; }
+/* 어바웃어스 메인 텍스트 */
+.about_txt{ width:100%; }
+.about_txt > *{ position:absolute; }
+.about_txt > h2{ font-family:'Maven Pro', sans-serif; font-weight:900; color:#007445; font-size:13em; top:22%; left:80px; }
+.about_txt > p { color:#ffffff; font-size:1.7em; top:77%; left:80px; line-height:1.3; }
+/* 스크롤 애니메이션 */
+.scroll{ position:absolute; bottom:0; left:50%; width:2.5px; height:70px; overflow:hidden; }
+.scroll::before{ content:''; display:block; width:2px; height:100%; position:absolute; left:50%; bottom:0; background-color:#c2c2c2; }  
+.scroll::after{ content:''; display:block; width:2px; height:100%; position:absolute; left:50%; bottom:0; background-color:#007445; animation: down 3s infinite ease; }
+@keyframes down{ 
+	0%{ top:-80%; }
+	100% { top:100%; }
+ }
+/* 어바웃어스 box1+2+3 = wrap */
+.about_wrap{ width:100vw; height:100vh; position:relative; }
+/* 어바웃박스1 */
+.about_box1{ position:absolute; width:80%; height:1120px; background:#f2f2f5; transform:translateX(11.5%); }
+.about_box1 > h2{ color:#a0a0a2; font-family:'Maven Pro', sans-serif; font-size:8.5em; text-align:right; padding-right:80px; padding-top:50px; }
+/* 비전 (텍스트) */
+.vision{width:100%;}
+.vision > h3{ font-size:4.5em; font-family: 'Maven Pro', sans-serif; color:#222222; font-weight:900; margin-left:240px; }
+.vision > p{ font-size:2em; /*font-weight:900;*/ letter-spacing: 1px; margin:95px 0 0 240px; line-height:130%; }
+.green{ color:#007445; font-weight:bold; }
+/* ci(텍스트, 이미지) */
+.ci{ width:100%; margin-top:160px; }
+.ci > h3{ font-size:4.5em; font-family:'Maven Pro', sans-serif; color:#222222; font-weight:900; margin-left:40px;}
+.ci > p{ font-size:2em; /*font-weight:900;*/ letter-spacing:1px; margin:100px 0 0 40px; line-height:130%; }
+.ci > img{ position:absolute; top:615px; right:9.5%; }
+/* 브이 모양 이미지 */
+.about_sh_v{position:absolute; top:18%; left:-68px; width:247px; height:246px; background:url(../images/img/ABOUT_shape_v.png) no-repeat; }
+/* 라인 */
+.about_sh_line{position:absolute; top:60.5%; left:-236px; width:260px; height:2px; background-color:#d63232; }
+/* 어바웃박스2 */
+.about_box2{ position:absolute; top:1016px; left:100px; width:1230px; height:819px; background:url(../images/img/ABOUT_service.png) no-repeat; z-index: 200; }
+/* 텍스트박스 */
+.txt_box{ width:383px; height:819px; position:absolute; right:0; background: rgba(0,0,0,0.4);  }
+.txt_box > h3{font-family:'Maven Pro', sans-serif; font-size:3.5em; color:#fdfbfb; font-weight:900; text-align:center; margin:220px 0 100px; }
+.txt_box > p{font-family:'Maven Pro', sans-serif; color:#ffffff; font-weight:500; font-size:2em; text-align:right; line-height:2.3; margin-right:55px;}
+/* 어바웃박스3 */
+.about_box3{ position:absolute; top:134%; width:80%; height:2050px; background:#007445; transform:translateX(11.5%); }
+.about_box3 h3{ font-family: 'Maven Pro', sans-serif; font-size:8em; color:#ffffff; font-weight:900; margin-left:45px; margin-top:688px; }
+/* 로고 6개 감싸는 ul */
+.about_box3 ul{ width:786px; height:620px; position:relative; top:6%; left:50%; transform: translateX(-50%); }
+.about_box3 ul li{ float:left; margin:20px; box-sizing: content-box; text-indent:-99999px; }
+/* 로고 이미지 */
+.about_box3 ul li:first-child{ background:url(../images/img/ABOUT_client_01.png) no-repeat center center; width:353px; height:193.333px;  }
+.about_box3 ul li:nth-child(2){ background:url(../images/img/ABOUT_client_02.png) no-repeat center center; width:353px; height:193.333px; }
+.about_box3 ul li:nth-child(3){ background:url(../images/img/ABOUT_client_03.png) no-repeat center center; width:353px; height:193.333px; }
+.about_box3 ul li:nth-child(4){ background:url(../images/img/ABOUT_client_04.png) no-repeat center center; width:353px; height:193.333px; }
+.about_box3 ul li:nth-child(5){ background:url(../images/img/ABOUT_client_05.png) no-repeat center center; width:353px; height:193.333px; }
+.about_box3 ul li:last-child{ background:url(../images/img/ABOUT_client_06.png) no-repeat center center; width:353px; height:193.333px; }
+/* p 모양 이미지 */
+.about_sh_p{ position:absolute; top:25%; right:-240px; width:186px; height:335px; background:url(../images/img/ABOUT_shape_p.png) no-repeat; background-size:73%; }
+
+
+
+
+
+
+
+/* 포트폴리오 헤더 */
+
+
+/* 포트폴리오 비디오 */
+#bgvideo {
+	height: 70%; width:80%; position: absolute; left: 50%; top:140px; transform:translateX(-50%); z-index:10;
+}
+.index_wrap > video {
+	display: block; overflow: hidden;
+}
+/* 포트폴리오 메인 텍스트 */
+.port_txt{ position:absolute; left:50%; top:87%; width:1062px; height:126px; transform:translateX(-50%); line-height:1.3; }
+.port_txt p{ text-align:center; font-size:1.6em; font-weight:bold; }
+/* 포트폴리오 원 모양 애니메이션 효과 */
+.portfolio_sh{ 
+	width: 185px; height: 185px; position: absolute;
+	top:215px; background: #007445; border-radius: 50%; padding: 30px;
+		animation: ani 9s infinite alternate;
+	}
+	@keyframes ani{
+		0% { left:0; }
+		100% { left:100vw; }
+	}
+/* 포트폴리오 con*2 감싸는 wrap */
+.portfolio_wrap{width:1520px; height:2600px; margin:0 auto; z-index:100; margin-top:100px;}
+/* 포트폴리오 왼쪽 이미지(1,3,5) 컨테이너 */
+.left_con{margin-left:100px; width:600px; height:2200px; margin-right:50px;}
+/* 포트폴리오 오른쪽 이미지(2,4,6) 컨테이너 */
+.right_con{margin-right:112px; width:600px; height:2400px; margin-left:50px; }
+.h_600{ width:600px; height:600px; margin-bottom:100px; }
+.h_800{ width:600px; height:800px; margin-bottom:100px; }
+.h_600 a{display:block; width:inherit; height:inherit;}
+.h_800 a{display:block; width:inherit; height:inherit;}
+/* 포트폴리오 백그라운드 이미지 */
+.Img1{background:url(../images/img/portfolio_01.jpg) no-repeat;}
+.Img2{background:url(../images/img/portfolio_03.jpg) no-repeat;}
+.Img3{background:url(../images/img/portfolio_05.jpg) no-repeat;}
+.Img4{background:url(../images/img/portfolio_02.jpg) no-repeat;}
+.Img5{background:url(../images/img/portfolio_04.jpg) no-repeat;}
+.Img6{background:url(../images/img/portfolio_06.jpg) no-repeat;}
+
+
+
+
+/* 메뉴 테두리 */
+#border{ width:99.1vmax; height:100vh; border:10px solid #007445; position:absolute; top:-80px; box-sizing:border-box; background-color: #ffffff; display:none; }
+#border.active{display: block;}
+#gnb{ position:absolute; width:99vw; height:65vh; top:140px; }
+/* 메뉴 gnb 텍스트 */
+#gnb a{ display:block; font-family: 'Maven Pro', sans-serif; color:#007445; font-size:4em; font-weight:900; text-align:center; width:100%; height:100%; line-height:2; }
+/* 메뉴 (리스트) */
+#gnb li{ width:50%; height:50%; float:left; line-height:1.3; }
+/* 메뉴 호버 시 백그라운드 컬러와 폰트 컬러 변경 */
+#gnb li:hover{ background-color:#007445; transition: all 0.7s; }
+#gnb li:hover span{ color:#ffffff; transition: all 0.7s; }
+/* 메뉴 숫자 세로로 변형 */
+#gnb li>span{writing-mode: vertical-lr; transform: rotate(180deg); }
+/* 메뉴 숫자 위치 변경 */
+#gnb li:first-child > span{ position:relative; top:42%; left:350px; }
+#gnb li:nth-child(2) > span{ position:relative; top:42%; left:305px; }
+#gnb li:nth-child(3) > span{ position:relative; top:42%; left:340px; }
+#gnb li:last-child > span{ position:relative; top:43%; left:320px; }
+/* 메뉴 gnb 텍스트 라인 */
+#gnb li a span{display:block; height:100%; line-height:4;}
+footer{ position:fixed; top:810px; width:100vw; height:148px; z-index:101; }
+#footer{width:100vw; position:absolute; top:50%; margin-top:-74px; display:none;}
+#footer.active{display: block;}
+#footer span{ display:block; float:left; position:relative; }
+#footer span:nth-of-type(1){left:13%; top:10px;}
+#footer span:nth-of-type(2){position:absolute; right:13%; top:10px;}
+#footer p{ text-align:center; display:block; line-height:2; }
+
+
+
+
+.contact_box1{ position:absolute; top:35%; left:50%; margin-left:-600px; }
+.contact_box1>p>span{ font-size:1.8em; font-family:'Maven Pro', sans-serif; font-weight:900; color:#222222; margin-right:20px; }
+.contact_box1>p{ font-size:1.3em; font-weight:bold; color:#222222; text-align:center; margin-left:-67%; margin-bottom:10px; }
